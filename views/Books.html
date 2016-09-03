@@ -1,4 +1,14 @@
-List of books
-<div ng-repeat="allbooks in books">
-  {{ books.title }}
+<div class="row" style="margin-top:50px">
+   <div class="container">
+      <div ng-repeat="list in lists">
+         <div ng-repeat="book in list.books">
+           <span><b>{{ book.title }}</b> - <i>{{book.author}}</i> - </span>
+           <span>Rank : {{ book.rank}} - </span>
+           <span>Rank last week : {{ book.rank_last_week}}</span>
+           <span ng-if="book.rank >= book.rank_last_week">
+              - <img src="https://textfac.es/static/ico/favicon.png" alt="" />
+           </span>
+         </div>
+      </div>
+   </div>
 </div>
